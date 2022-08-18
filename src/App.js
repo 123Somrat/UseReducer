@@ -10,7 +10,8 @@ function App() {
    // here useing state we can update our state value
   // here dispatch is a function
  const  [state,dispatch] = useReducer(reducer,0)
-   
+
+   // Declare the action type as a variable
      const INCREMENT = "INCREMENT";
      const  DECREMENT = "DECREMENT";
      const  RESET = "RESET";
@@ -31,18 +32,23 @@ function App() {
     }
 
  }
-// Declare the action type as a variable
+
+ 
+   // create action creator function
+    const Increment = (dispatch)=>{
+      return  dispatch({ type: INCREMENT});
+    }
+ 
 
 
-
-   const Increment = (num)=>{
-       dispatch({ type: INCREMENT});
+   const IncrementCount = (num)=>{
+        Increment(dispatch)
       }
    
-   const Decrement = ()=>{
+   const DecrementCount = ()=>{
     dispatch({type:DECREMENT});
    }
-   const Reset = ()=>{
+   const ResetCount = ()=>{
     dispatch({type:RESET});
    }
 
@@ -50,9 +56,9 @@ function App() {
   return (
     <div className="App">
          <h1>Count:{state}</h1> 
-         <button onClick={Increment}>Increment</button>
-         <button onClick={Decrement}>Decrement</button>
-         <button onClick={Reset}>Reset</button>
+         <button onClick={IncrementCount}>Increment</button>
+         <button onClick={DecrementCount}>Decrement</button>
+         <button onClick={ResetCount}>Reset</button>
     </div>
   );
 }
