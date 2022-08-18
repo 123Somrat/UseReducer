@@ -3,6 +3,15 @@ import { useReducer } from "react";
 
 function App() {
    const [count,setCount] = useState(0)
+ // useing useReducer hooks
+  // useReducer hooks takes two parameter one is function and second one is initialState
+  // here Reducer is a function and initialState is initial value of our state
+  // useReducer hooks returns a array
+   // here useing state we can update our state value
+  // here dispatch is a function
+ const  [state,dispatch] = useReducer(reducer,initialState)
+
+
 
    const Increment = (num)=>{
        setCount((prev)=>prev+num)
