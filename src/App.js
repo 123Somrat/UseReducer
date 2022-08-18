@@ -43,8 +43,11 @@ function App() {
     const Decrement = (dispatch)=>{
       return  dispatch({ type: DECREMENT});
     }
- 
-
+   
+    // create Reset action creator function
+    const Reset = (dispatch)=>{
+      return  dispatch({ type: RESET});
+    }
 
    const IncrementCount = (num)=>{
         Increment(dispatch)
@@ -54,7 +57,7 @@ function App() {
        Decrement(dispatch);
    }
    const ResetCount = ()=>{
-    dispatch({type:RESET});
+       Reset(dispatch)
    }
 
 
