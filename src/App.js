@@ -13,22 +13,31 @@ function App() {
 
 
  // Creating reducer function
-
  function reducer(state,action){
-    if(action.type==="increment"){
-      return state + 1
+    switch(action.type){
+      case "increment"  :
+        return state + 1;
+      case "decrement" :
+        return state -1 ;
     }
+
  }
 
    const Increment = (num)=>{
        dispatch({type:"increment"})
       }
    
+   const Decrement = ()=>{
+    dispatch({type:"decrement"})
+   }
+ 
+
+
   return (
     <div className="App">
          <h1>Count:{state}</h1> 
          <button onClick={Increment}>Increment</button>
-         <button >Decrement</button>
+         <button onClick={Decrement}>Decrement</button>
          <button >Reset</button>
     </div>
   );
