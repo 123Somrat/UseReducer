@@ -34,9 +34,14 @@ function App() {
  }
 
  
-   // create action creator function
+   // create Increment action creator function
     const Increment = (dispatch)=>{
       return  dispatch({ type: INCREMENT});
+    }
+ 
+    // create Decremnet action creator function 
+    const Decrement = (dispatch)=>{
+      return  dispatch({ type: DECREMENT});
     }
  
 
@@ -46,7 +51,7 @@ function App() {
       }
    
    const DecrementCount = ()=>{
-    dispatch({type:DECREMENT});
+       Decrement(dispatch);
    }
    const ResetCount = ()=>{
     dispatch({type:RESET});
