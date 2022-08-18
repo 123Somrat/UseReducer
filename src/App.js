@@ -10,33 +10,40 @@ function App() {
    // here useing state we can update our state value
   // here dispatch is a function
  const  [state,dispatch] = useReducer(reducer,0)
+   
+     const INCREMENT = "INCREMENT";
+     const  DECREMENT = "DECREMENT";
+     const  RESET = "RESET";
 
-
+      
  // Creating reducer function
  function reducer(state,action){
-  const {type} = action;
+  const {type} = action
     switch(type){
-      case "increment"  :
+      case INCREMENT:
         return state + 1;
-      case "decrement" :
+      case DECREMENT :
         return state -1 ;
-      case "reset" :
+      case RESET :
         return 0 ;
       default :
         return state
     }
 
  }
+// Declare the action type as a variable
+
+
 
    const Increment = (num)=>{
-       dispatch({type:"increment"})
+       dispatch({ type: INCREMENT});
       }
    
    const Decrement = ()=>{
-    dispatch({type:"decrement"})
+    dispatch({type:DECREMENT});
    }
    const Reset = ()=>{
-    dispatch({type:"reset"})
+    dispatch({type:RESET});
    }
 
 
